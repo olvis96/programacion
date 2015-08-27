@@ -1,0 +1,25 @@
+// volumen de un cilindro.cpp : Defines the entry point for the console application.
+//Autor:Olvis Reyes Rojas
+//Fecha:27/08/2015
+
+#include "stdafx.h"
+#include <iostream>
+#include <math.h>
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+int H,R;
+float C;
+cout<<"Calcular el Volumen de un Cilindro"<<endl;
+cout<<"Ingrese la Altura:"<<endl;
+cin>>H;
+cout<<"Ingrese el Radio:"<<endl;
+cin>>R;
+C=(3.1416*R*R*H);
+cout<<"El Volumen del Cilindro es:"<<C<<endl;
+getch();
+}
+
+
