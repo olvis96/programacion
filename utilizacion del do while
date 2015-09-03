@@ -1,0 +1,37 @@
+  Objetivo: calcular la nota final de un alumno
+  nueva instruccion: do while "ciclo repetitivo"
+  Autores: Jorge Paz y Olvis Reyes
+                                                              //librerias principales
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+
+using namespace std;                                        // para el simple ingreso por teclado y pantalla
+
+void main()                                                  //cuerpo principal del programa            
+{                                                            //indicador del comienzo del programa
+	int i,id,n,np,ef,p1,p2,p3;                                 //declaracion de variables de numeros naturales
+	float nf;                                                  //declaracion de variables de numeros reales
+	char (resp);                                               //introduccion de caracteres alfanumerico
+
+	                                                           // la nueva instruccion do while: ciclo repetitivo
+	do
+	{                                                             //indicador del comienzo del programa con el ciclo repetitivo
+	    cout<< " ID: ";                                           //letrero de dato al usuario
+	    cin>> id;                                                 //ingreso de dato por teclado
+		cout<< " Introduzca la nota practica: " ;                   //letrero de dato al usuario
+	    cin>> np;                                                 //ingreso de dato por teclado
+		cout<< " Introduzca la nota de los tres parciales: " ;      //letrero de dato al usuario
+	    cin>> p1;                                                 //ingreso de dato por teclado
+		cin>> p2;                                                   //ingreso de dato por teclado
+		cin>> p3;                                                   //ingreso de dato por teclado
+		cout<< " Introduzca la nota del examen final: ";            //letrero de dato al usuario
+	    cin>> ef;                                                 //ingreso de dato por teclado
+		nf=np*0.2+((p1+p2+p3)/3)*0.4+ef*0.4;                         //calculo asignado para la operacion
+		cout<< " La nota final es: "<< nf<<endl;                     //Resultado del calculo por pantalla
+		cout<< " Desea continuar (y) o (n) ";                        //letrero de dato al usuario
+	    cin>> resp;                                                //ingreso de dato por teclado
+	}                                                              //indicador de la finalizacion del programa del ciclo repetitivo
+	while (resp!='n');                                             //si es falso termina el programa
+	getch();                                                       //detiene la patalla para que el programa no se cierre automaticamente
+}                                                                //indicador de la finalizacion del programa
