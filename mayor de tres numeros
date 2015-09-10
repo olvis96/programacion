@@ -1,0 +1,30 @@
+// condicionales mayor de tres numeros.cpp : Defines the entry point for the console application.
+// autor: olvis reyes rojas
+//fecha:10/09/15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{ float a,b,c;
+           cout<<"Encontrar el mayor numero de tres valores"<<endl;
+           cout<<"ingrese los tres valores :"<<endl;
+           cin>>a>>b>>c;
+if (a>b)
+        if(a>c)
+            cout<<"El mayor de los tres:"<<endl<<a<<endl;
+        else
+         cout<<"El mayor de los tres:"<<endl<<c<<endl;
+else
+      if (b>c)
+           cout<<"El mayor de los tres:"<<endl<<b<<endl;
+           else
+           cout<<"El mayor de los tres:"<<endl<<c<<endl;
+if ((a==b)&&(a==c))
+cout<<"Los numeros son iguales"<<endl;
+
+getch();
+}
+
