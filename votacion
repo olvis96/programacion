@@ -1,0 +1,19 @@
+// condicionales votacion.cpp : Defines the entry point for the console application.
+// autor: olvis reyes rojas
+//fecha:10/09/15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main()
+{
+int a;
+cout<<"ingrese edad:"<<endl;
+cin>>a;
+if (a>=18)
+cout<<"sipuede vota"<<endl;
+else
+cout<<"no puede votar"<<endl;
+getch();
+}
