@@ -1,0 +1,52 @@
+//ciclo repetitivo
+//autor:olvis reyes rojas
+//fecha:17/09/2015
+
+
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    float b,h,a,p;
+	char resp;
+	do
+	{
+	cout<<endl<<"ingrese la base:";
+	cin>> b;
+	cout<< "ingrese la altura: " <<endl;
+	cin>>h;
+    p=(b*h)/2;
+	cout<< "el area es: " <<p;
+	cout<<"desea continuar: (y)es" <<endl;
+	cin>> resp;
+	}while (resp=='y');
+	getch();
+}
+
+
+
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+    float b,h,a,p;
+	cout<<"ingrese la base" <<endl;
+	cin>> b;
+	while(b!=0)
+	{ cout<< "ingrese la altura: " <<endl;
+	  cin>>h;
+	  p=(b*h)/2;
+	  cout<< "el area es: " <<p;
+	  cout<<"ingrese la base" <<endl;
+	  cin>> b;
+	}
+	getch();
+}
