@@ -1,0 +1,81 @@
+// ejemplo 2 menu.cpp : main project file.
+//autor:olvis reyes rojas
+//fecha:10/08/2015
+//objetivo: facilitacion de calculos en 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#include "stdlib.h"
+using namespace std;
+
+float area(float radio);
+float potencia (float B, int E);
+float suma(float dato);
+
+
+void main()
+{ float b,a,pot,r;
+  int opcion,e;
+  //menu
+  do{
+	  //desplegar las opciones
+	  cout<<"\t\t Menu "<<endl;
+	  cout<<"\t\t ==== "<<endl;
+	  cout<<"1. Potencia" <<endl;
+	  cout<<"2. suma de los N numeros" <<endl;
+	  cout<<"3. Area del círculo" <<endl;
+	  cout<<"0. Salir "<<endl;
+	  cout<<"opcion: "<<endl;
+	  cin>>opcion;
+	  //condicional multiple
+	  switch (opcion)
+	  {
+	  case 1: cout<<"ingrese el numero de la base:"<<endl;
+		      cin>> b;
+			  cout<<"ingrese el numero del exponente:"<<endl;
+			  cin>> e;
+			  pot= potencia(b,e);
+			  cout<<"la potencia es: "<<pot;
+			  break;
+	  case 2: cout<<"ingrese el numero para calcular la sumatoria:"<<endl;
+		      cin>>a;
+			  cout<<"La suamatoria es: "<<suma(a)<<endl;
+			  break;
+	  case 3: cout<<"ingrese el radio: "<<endl;
+		      cin>>r;
+			  cout<<"El area es: "<<area(r)<<endl;
+			  break;
+	  case 0: cout<<"saliendo del Menu";
+		      break;
+	  default: cout<<"ERROR de opcion";
+		      break;
+	}
+	getch();
+	system("cls");
+   }while(opcion!=0);
+   getch();
+}
+
+float area(float radio)
+{ float A;
+  A= ((radio*radio)*3.1416);
+  return(A);
+}
+
+float potencia(float B, int E)
+{float acum;
+    acum=1;
+	for(int i=1;i<=E;i++)
+	  acum=acum*B;
+  return(acum);
+}
+
+float suma (float dato)
+{ int s;
+      s=0;
+	  for(int i=1;i<=dato;i++)
+		  s=s+i;
+	return (s);
+}
