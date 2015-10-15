@@ -1,0 +1,87 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "math.h"
+
+using namespace std;
+
+
+void main()
+{
+	int N, opcion,acum;
+	float x, suma, mayor, menor;
+	do {
+		cout << "\t\t Menu \n";
+		cout << "1. promedio \n";
+		cout << "2. El mayor, menor de N numeros \n";
+		cout << "3. Suma de los digitos de un numero \n";
+		cout << "4. Mostrar y Suma de N numeros alternados \n";
+		cout << "0. Salir del programa \n";
+		cout << "Opcion: ";
+		cin >> opcion;
+		switch (opcion)
+		{
+		case 1:
+			cout << "Ingrese la cantidad de numeros enteros para sacar su promedio: " << endl;
+			cin >> N;
+			suma = 0;
+			cout << "Ingrese los numeros para sacar el promedio:" << endl;
+			for (int i = 1; i <= N; i++)
+			{
+				cin >> x;
+				suma = suma + x;
+			}
+			cout << "El promedio es:" << (suma / N) << endl;
+			break;
+		case 2:
+			cout << "Ingrese la cantidad de N numeros reales para hallar el mayor o menor" << endl;
+			cin >> N;
+			cout << "Ingrese los numeros:" << endl;
+			cin >> x;
+			mayor = x;
+			menor = x;
+			for (int i = 1; i <= N-1; i++)
+			{
+				cin >> x;
+				if (mayor <= x)
+					mayor = x;
+				else
+					menor = x;
+			}
+			cout << "el mayor es:" << mayor << endl;
+			cout << "el menor es:" << menor << endl;
+			break;
+		case 3:
+			cout << "Ingrese el numero a calcular la suma de sus digitos:" << endl;
+			cin >> N;
+			acum = 0;
+			while (N != 0)
+			{
+				acum = acum + N % 10;
+				N = N / 10;
+			}
+			cout << "La suma de los digitos es:" <<acum<< endl;
+			break;
+		case 4:
+			cout << "Ingrese la cantidad de numeros a calcular:" << endl;
+			cin >> N;
+			for (int i = 1; i <= N; i++)
+			{
+				cin >> x;
+				if (i % 2 == 0)
+					pow(x, 2);
+				else
+					cout << x * (-1);
+			}
+			break;
+			default: cout << "Error al colocar opcion";
+				break;
+		}
+		_getch();
+		system("cls");
+	}
+	while (opcion != 0);
+	_getch();
+}
