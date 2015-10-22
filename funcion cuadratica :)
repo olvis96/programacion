@@ -1,0 +1,88 @@
+// cuadratica.l.cpp : Defines the entry point for the console application.
+//Autor:Olvis Reyes Rojas
+//fecha:10/22/2015
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float x1, x2;
+ 
+
+float determinante (float a, float b, float c);
+void solucion (float a, float b, float c);
+void reales (float a, float b, float c);
+void imginarias (float a, float b, float d);
+float unica (float a, float b);
+void main()
+{
+	float a,b,c,d,x;
+	cout<<"\t\t\ Formula Cuadratica \t\t"<<endl;
+	cout<< "Ingrese los datos de las variables:"<<endl;
+	cout<<"ingrese A:"<<endl;
+	cin>>a;
+
+	while(a!=0)
+	{
+	cout<<"ingrese B:"<<endl;
+	cin>>b;
+	cout<<"ingrese C:"<<endl;
+	cin>>c;
+	
+	d=determinante(a,b,c);
+
+     if (d>0)
+		{
+			reales (a,b,c);
+			cout<<"Solucion 1: "<<x1<<endl;
+			 cout<<"\nSolucion 2: "<<x2<<endl;
+			
+		}
+			else
+				if (d==0)
+				{
+				x=unica(a,b);
+				cout<<"una solucion"<<x<<endl;
+				}
+			else {
+				imginarias (a,b,d);
+				cout<<"Solucion 1:"<<endl<<x1<<endl<<" + "<<x2<<endl<<"imaginaria"<<endl;
+				cout<<"\nSolucion 2: "<<endl<<x1<<endl<<" - "<<x2<<endl<<"imaginaria";
+			}
+		cout<<"ingrese el valor de A:"<<endl;	
+		cin>>a;
+	} 
+	
+	getch();
+}
+
+float determinante (float a, float b, float c)
+	
+{
+		float aux;
+		aux=pow(b,2)-4*a*c;
+		return aux;
+}
+	
+	void reales (float a, float b, float d)
+	{
+		x1=(-b+sqrt(d))/(2*a);
+		x2=(-b-sqrt(d))/(2*a);
+	
+	}
+
+	void imginarias (float a, float b, float d)
+	{
+		x1=-b/(2*a);
+		x2=sqrt(-d)/(2*a);
+	}
+
+	float unica (float a, float b)
+	{
+		float x;
+			x=-b/(2*a);
+	return x;
+
+	}
